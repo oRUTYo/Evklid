@@ -1,0 +1,221 @@
+@charset "UTF-8";
+/**
+ * Accordion v3.3.2
+ * Lightweight and accessible accordion module created in pure Javascript
+ * https://github.com/michu2k/Accordion
+ *
+ * Copyright (c) Michał Strumpf
+ * Published under MIT License
+ */
+
+.ac {
+  background-color:#fff;
+  box-sizing:border-box;
+  border-bottom: 1px solid #CACACA;
+  border-top: 1px solid #CACACA;
+}
+
+.ac:hover {
+  border-top: 1px solid #FF9900;
+  border-bottom: 1px solid #FF9900;
+}
+
+.ac:hover .ac-trigger{
+  color: #FF9900;
+}
+
+.ac:hover .faq-item-img ellipse{
+  fill: #FF9900;
+}
+
+.ac:hover .faq-item-img path{
+  fill: #FFFFFF ;
+}
+
+.ac .ac-header {
+  position: relative;
+  margin:0;
+  padding: 39px 0 38px 0;
+}
+
+.faq-item-img {
+  position: absolute;
+  top: 30px;
+  right: 0;
+}
+
+.ac .ac-trigger {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 32px;
+
+  color: #333333;
+  text-align:left;
+  width:100%;
+  display:block;
+  cursor:pointer;
+  background-color:transparent;
+  transition:color .25s ease;
+  position:relative;
+  text-decoration:none;
+  margin:0;
+  padding: 0;
+  border:0;
+}
+
+.ac .ac-trigger:focus {
+  color: #FF9900;
+  outline: none;
+}
+
+.ac-trigger:focus ~ svg ellipse{
+  fill: #FF9900;
+}
+
+.ac-trigger:focus ~ svg path{
+  fill: #FFFFFF;
+}
+
+.ac:focus-within {
+  border-top: 1px solid #FF9900;
+  border-bottom: 1px solid #FF9900;
+}
+
+.ac .ac-panel {
+  overflow:hidden;
+  transition-property:height,visibility;
+  transition-timing-function:ease;
+}
+
+.ac .ac-panel .ac-text {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 32px;
+  color: #333333;
+
+  padding:10px;
+  margin:0;
+}
+
+.ac.js-enabled .ac-panel {
+  visibility:hidden;
+}
+
+.ac.is-active .ac-panel {
+  visibility:visible;
+}
+
+.ac svg {
+  transform: none;
+  transition: transform 0.3s ease-in-out;
+}
+
+.ac.is-active .ac-trigger:focus {
+  color: #333333;
+}
+
+.ac.is-active {
+  border-bottom: 1px solid #CACACA;
+  border-top: 1px solid #CACACA;
+}
+
+.ac.is-active svg {
+  transform: rotateZ(45deg);
+  transition: transform 0.3s ease-in-out;
+}
+
+.ac.is-active .faq-item-img ellipse{
+  fill: #ECECEC;
+}
+
+.ac.is-active .faq-item-img path{
+  fill: #666666;
+}
+
+@media (max-width: 1024px) {
+  .ac:nth-child(2n) .ac-header {
+    padding: 30px 0;
+  }
+
+  .ac:nth-child(2n) .faq-item-img {
+    top: 35px;
+  }
+
+  .ac .ac-trigger {
+    max-width: 756px;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 32px;
+
+    color: #333333;
+  }
+}
+
+@media (max-width: 768px) {
+  .ac:not(:nth-child(1)) .ac-header {
+    padding: 30px 0;
+  }
+
+  .ac:nth-child(2n) .faq-item-img {
+    top: 35px;
+  }
+
+  .ac .ac-trigger {
+    max-width:  570px;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 32px;
+
+    color: #333333;
+  }
+}
+
+@media (max-width: 480px) {
+  .ac .ac-header {
+    padding: 29px 0 29px 0;
+  }
+
+  .ac:nth-child(1) .faq-item-img {
+    top: 39px;
+  }
+
+  .ac:nth-child(2) .faq-item-img {
+    top: 50px;
+  }
+
+  .ac:nth-child(3) .faq-item-img {
+    top: 48px;
+  }
+
+  .ac:nth-child(4) .faq-item-img {
+    top: 47px;
+  }
+
+  .ac:nth-child(5) .faq-item-img {
+    top: 34px;
+  }
+
+  .ac .faq-item-img {
+    right: -1px;
+    width: 30px;
+    height: 30px;
+  }
+
+  .ac .ac-trigger {
+    max-width: 243px;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 24px;
+    color: #333333;
+  }
+}
